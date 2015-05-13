@@ -1,0 +1,256 @@
+
+//=========================================
+
+//     Tweaks
+
+//=========================================
+
+//-----------------------------------------
+//     Site
+//-----------------------------------------
+
+// tweak: {  "category" : "Site Wide", "type" : "dropdown", "title" : "Site Vertical Alignment", "options" : [ "Top", "Middle" ], "default" : "Middle", "target" : "#header, #flowContent" }
+
+// tweak: { "category" : "Site Wide", "type" : "color", "title" : "Page Color", "showOnlyWhenPresent" : "body:not(.collection-type-products.view-list):not(.collection-type-index)", "target" : "#main" }
+@pageColor: #ffffff;
+
+//-----------------------------------------
+//     Homepage
+//-----------------------------------------
+
+// tweak: { "category" : "Homepage", "type" : "checkbox", "title" : "Full Width Homepage", "active" : "true", "showOnlyWhenPresent" : ".collection-type-page.homepage", "target" : "#main" }
+
+//-----------------------------------------
+//     Header
+//-----------------------------------------
+
+// tweak: { "category" : "Header", "type" : "color", "title" : "Header Color", "target" : "#header" }
+@headerColor: #ffffff;
+
+// tweak: { "category" : "Header", "type" : "font", "title" : "Site Title Font", "showOnlyWhenPresent" : "#siteTitle:only-child, .use-site-title-in-mobile-header", "target" : "#siteTitle", "steps" : 0.1 }
+.site-title-font {
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.3em;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+// tweak: { "category" : "Header", "type" : "color", "title" : "Site Title Color", "showOnlyWhenPresent" : "#siteTitle:only-child, .use-site-title-in-mobile-header", "target" : "#siteTitle" }
+@siteTitleColor: #242628;
+
+// tweak: { "category" : "Header", "type" : "value", "title" : "Logo Size", "min" : 8, "max" : 160, "showOnlyWhenPresent" : "#logo img", "target" : "#logo" }
+@logoSize: 60px;
+
+
+// tweak: { "category" : "Header", "type" : "font", "title" : "Site Tagline Font", "showOnlyWhenPresent" : "#siteTagline", "target" : "#siteTagline", "steps" : 0.1  }
+.site-tagline-font {
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+
+// tweak: { "category" : "Header", "type" : "color", "title" : "Site Tagline Color", "showOnlyWhenPresent" : "#siteTagline", "target" : "#siteTagline" }
+@siteTaglineColor: rgba(17, 17, 17, 0.382);
+
+// tweak: { "category" : "Header", "type" : "checkbox", "title" : "Header Border", "active" : "false", "target" : "#header" }
+
+// tweak: { "category" : "Header", "type" : "value", "title" : "Header Border Thickness", "min" : 1, "max" : 8, "showOnlyWhenPresent" : ".header-border", "target" : "#header" }
+@headerBorderThickness: 1px;
+
+// tweak: { "category" : "Header", "type" : "color", "title" : "Header Border Color", "showOnlyWhenPresent" : ".header-border", "target" : "#header"  }
+@headerBorderColor: rgba(0, 0, 0, 0.1);
+
+// tweak: { "category" : "Header", "type" : "checkbox", "title" : "Use Site Title in Mobile Header", "active" : "true", "target" : "#header", "showOnlyWhenPresent" : ".logo-image" }
+
+//-----------------------------------------
+//     Navigation
+//-----------------------------------------
+
+// tweak: {  "category" : "Navigation", "type" : "dropdown", "title" : "Folder Links", "options" : [ "Always Show", "Collapsible" ], "default" : "Always Show", "showOnlyWhenPresent" : ".folder-collection", "target" : ".navigation, .navigation-secondary" }
+
+// tweak: {  "category" : "Navigation", "type" : "dropdown", "title" : "Index Links", "options" : [ "Show Both", "Parent Link Only", "Child Links Only", "Show Both While Inside Index" ], "default" : "Parent Link Only", "showOnlyWhenPresent" : ".index-collection", "target" : ".navigation, .navigation-secondary" }
+
+// tweak: {  "category" : "Navigation", "type" : "dropdown", "title" : "Product Category Links", "options" : [ "Show Both", "Parent Link Only", "Category Links Only", "Show Both While Inside Collection" ], "default" : "Parent Link Only", "showOnlyWhenPresent" : ".products-collection", "target" : ".navigation, .navigation-secondary" }
+
+// tweak: { "category" : "Navigation", "type" : "font", "title" : "Primary Nav Font", "loadAllVariants" : "true", "target" : ".navigation", "steps" : 0.1  }
+.nav-font {
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+// tweak: { "category" : "Navigation", "type" : "value", "title" : "Nav Link Spacing", "min" : 0, "max" : 15, "target" : ".navigation" }
+@navLinkSpacing: 6px;
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Primary Nav Link Color", "target" : ".navigation" }
+@navColor: #242628;
+
+// tweak: { "category" : "Navigation", "type" : "font", "title" : "Secondary Nav Font", "loadAllVariants" : "true", "target" : ".navigation-secondary", "steps" : 0.1  }
+.nav-secondary-font {
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Secondary Nav Link Color", "target" : ".navigation-secondary" }
+@navSecondaryColor: rgba(17, 17, 17, 0.4);
+
+// tweak: { "category" : "Navigation", "type" : "color", "title" : "Nav Active Color", "target" : ".navigation, .navigation-secondary" }
+@navActiveColor: #e60039;
+
+
+//-----------------------------------------
+//     Social
+//-----------------------------------------
+
+// tweak: { "category" : "Social", "type" : "checkbox", "title" : "Show Social Icons", "active" : "true", "showOnlyWhenPresent" : ".social", "target" : ".social" }
+
+// tweak: { "category" : "Social", "type" : "dropdown", "title" : "Social Icon Style", "options" : [ "Round", "Square", "Icon Only" ], "default" : "Square", "showOnlyWhenPresent" : ".show-social-icons", "target" : ".social" }
+
+// tweak: { "category" : "Social", "type" : "color", "title" : "Social Icon Color", "target" : ".social", "showOnlyWhenPresent" : ".show-social-icons" }
+@socialColor: rgba(17, 17, 17, 0.4);
+
+//-----------------------------------------
+//     Main Content
+//-----------------------------------------
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Heading Font", "loadAllVariants" : "true", "target" : "h1:not(#siteTitle), h2, h3:not(.comment-count), .masonry-title, .masonry-item .product-price", "steps" : 0.1  }
+.heading-font {
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5em;
+  letter-spacing: 0px;
+  text-transform: none;
+}
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Heading Color", "target" : "h1:not(#siteTitle), h2, h3:not(.comment-count)" }
+@headingColor: #242628;
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Body Font", "loadAllVariants" : "true", "target" : "#main .sqs-layout p, .summary-price"  }
+.body-font {
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0px;
+  text-transform: none;
+  line-height: 1.75em;
+}
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Body Text Color", "target" : "#main .sqs-layout p, .summary-price" }
+@bodyColor: rgba(17, 17, 17, 0.6);
+
+// tweak: { "category" : "Main Content", "type" : "font", "title" : "Meta Font", "loadAllVariants" : "true", "target" : ".entry-date-author, .entry-source, .entry-meta, .pagination, .flow-item-source, .summary-info-item, .product-mark, .masonry-item .product-mark.sale", "steps" : 0.1  }
+.meta-font {
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+// offtweak: { "category" : "Main Content", "type" : "color", "title" : "Meta Text Color", "target" : ".entry-date-author, .entry-source, .entry-meta, .pagination, .flow-item-source, .summary-info-item" }
+// @metaColor: rgba(0, 0, 0, 0.35);
+
+// tweak: { "category" : "Main Content", "type" : "color", "title" : "Link Color", "target" : "#main .sqs-block:not(.sqs-block-summary-v2) a, #main .sqs-block-summary-v2 .summary-excerpt a" }
+@linkColor: rgba(17, 17, 17, 0.75);
+
+//-----------------------------------------
+//     Products
+//-----------------------------------------
+
+// tweak: { "category" : "Products", "type" : "color", "title" : "Product Background Color", "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-item" }
+@productColor: #242628;
+
+// tweak: { "category" : "Products", "type" : "dropdown", "title" : "Product List Style", "options" : [ "Viewbook", "Catalog", "Showroom", "Flipcard" ], "default" : "Showroom", "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-item" }
+
+// tweak: { "category" : "Products", "type" : "value", "title" : "Product Column Width", "min" : 200, "max" : 800, "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-container", "js" : "true" }
+@productColumnWidth: 360px;
+
+// tweak: { "category" : "Products", "type" : "value", "title" : "Product Gutter", "min" : 0, "max" : 80, "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-container", "js" : "true" }
+@productGutter: 36px;
+
+// tweak: { "category" : "Products", "type" : "dropdown", "title" : "Product Aspect Ratio", "options" : [ "Auto", "1:1 Square", "3:2 Standard", "3:2 Standard (Vertical)", "4:3 Four-Thirds", "4:3 Four-Thirds (Vertical)", "16:9 Widescreen" ], "default" : "Auto", "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-item" }
+
+// tweak: { "category" : "Products", "type" : "value", "title" : "Product List Title Size", "min" : 0.25, "max" : 5, "steps" : 0.1, "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-title" }
+@productTitleSize: 1.4em;
+
+// tweak: { "category" : "Products", "type" : "value", "title" : "Product List Price Size", "min" : 0.25, "max" : 5, "steps" : 0.1, "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-item .product-price" }
+@productPriceSize: 1.2em;
+
+// tweak: { "category" : "Products", "type" : "color", "title" : "Product Title Color", "showOnlyWhenPresent" : ".collection-type-products.view-list:not(.product-list-style-showroom)", "target" : ".masonry-title" }
+@productTitleColor: #ffffff;
+
+// tweak: { "category" : "Products", "type" : "color", "title" : "Product Price Color", "showOnlyWhenPresent" : ".collection-type-products.view-list", "target" : ".masonry-item .product-price" }
+@productPriceColor: rgba(0, 0, 0, 0.6);
+
+// tweak: { "category" : "Products", "type" : "color", "title" : "Product Sale Color", "showOnlyWhenPresent" : ".collection-type-products .product-mark.sale", "target" : ".masonry-item .product-mark.sale" }
+@productSaleColor: #e60039;
+
+// tweak: { "category" : "Products", "type" : "checkbox", "title" : "Product Item Single Image Fill", "active" : "false", "showOnlyWhenPresent" : ".collection-type-products.view-item .flow-item:only-of-type", "target" : "#flowItems" }
+
+// tweak: { "category" : "Products", "type" : "value", "title" : "Product Item Image Margin", "min" : 0, "max" : 80, "showOnlyWhenPresent" : ".collection-type-products.view-item", "target" : ".flow-item", "js" : "true" }
+@productMargin: 16px;
+
+// tweak: { "category" : "Products", "type" : "checkbox", "title" : "Hide Product Share Button", "active" : "true", "showOnlyWhenPresent" : ".collection-type-products.view-item", "target" : ".collection-type-products.view-item .ss-social-button" }
+.collection-type-products.hide-product-share-button .ss-social-button{
+  display: none;
+  visibility: hidden;
+}
+
+//-----------------------------------------
+//     Index
+//-----------------------------------------
+
+// tweak: { "category" : "Index", "type" : "color", "title" : "Index Background Color", "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-item" }
+@indexColor: #242628;
+
+// tweak: { "category" : "Index", "type" : "dropdown", "title" : "Index List Title Style", "options" : [ "Overlay", "Color Overlay", "Under", "Always Show" ], "default" : "Overlay", "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-item" }
+
+// tweak: { "category" : "Index", "type" : "value", "title" : "Index List Font Size", "min" : 0.25, "max" : 7 , "steps" : 0.1, "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-title" }
+@indexListSize: 1.5em;
+
+// tweak: { "category" : "Index", "type" : "value", "title" : "Index Column Width", "min" : 200, "max" : 800, "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-container", "js" : "true" }
+@indexColumnWidth: 360px;
+
+// tweak: { "category" : "Index", "type" : "value", "title" : "Index Gutter", "min" : 0, "max" : 80, "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-container", "js" : "true" }
+@indexGutter: 36px;
+
+// tweak: { "category" : "Index", "type" : "dropdown", "title" : "Index Aspect Ratio", "options" : [ "Auto", "1:1 Square", "3:2 Standard", "3:2 Standard (Vertical)", "4:3 Four-Thirds", "4:3 Four-Thirds (Vertical)", "16:9 Widescreen" ], "default" : "Auto", "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-item" }
+
+// tweak: { "category" : "Index", "type" : "color", "title" : "Index Item Color", "showOnlyWhenPresent" : ".collection-type-index.index-list-title-style-always-show, .collection-type-index.index-list-title-style-color-overlay", "target" : ".masonry-item" }
+@indexItemColor: rgba(0, 0, 0, 0.25);
+
+// tweak: { "category" : "Index", "type" : "color", "title" : "Index Title Color", "showOnlyWhenPresent" : ".collection-type-index", "target" : ".masonry-title" }
+@indexTitleColor: #ffffff;
+
+//-----------------------------------------
+//     Gallery
+//-----------------------------------------
+
+// tweak: { "category" : "Gallery", "type" : "checkbox", "title" : "Gallery Single Image Fill", "active" : "false", "showOnlyWhenPresent" : ".collection-type-gallery .flow-item:only-of-type", "target" : "#flowItems" }
+
+// tweak: { "category" : "Gallery", "type" : "value", "title" : "Gallery Image Margin", "min" : 0, "max" : 80, "showOnlyWhenPresent" : ".collection-type-gallery", "target" : ".flow-item", "js" : "true" }
+@galleryMargin: 0px;
+
+
+//-----------------------------------------
+//     Blog
+//-----------------------------------------
+
+// tweak: { "category" : "Blog", "type" : "checkbox", "title" : "Blog Post Border", "active" : "false", "showOnlyWhenPresent" : ".collection-type-blog.view-list", "target" : "#main" }
+
+// tweak: { "category" : "Blog", "type" : "checkbox", "title" : "Hide Blog Author", "active" : "true", "showOnlyWhenPresent" : ".collection-type-blog", "target" : ".entry-author" }
+

@@ -1,0 +1,79 @@
+{.section items}
+	<ul data-content-field="navigation">
+		{.repeated section @}
+			{.collection?}
+				<li class="{collection.typeLabel}-collection{.section active} active-link{.end}{.if collection.folder} folder{.end}{.if folderActive} active-link active-folder{.end}{.equal? collection.typeName "products"} loading{.end}">
+
+				{.index?}
+					<a href="{collection.fullUrl}" class="index-parent">{collection.navigationTitle}</a>
+					<div class="index-child">
+						<ul>
+							{.repeated section items}
+								{.collection?}
+								<li class="{.section active} active-link{.end}">
+									<a href="{collection.fullUrl}">
+										{collection.navigationTitle}
+									</a>
+								</li>
+								{.end}
+							{.end}
+						</ul>
+					</div>
+				{.or folder?}
+					<a aria-haspopup="true" href="#">{collection.navigationTitle}</a>
+					<div class="folder-child">
+						<ul>
+							{.repeated section items}
+								{.collection?}
+								<li class="{.section active} active-link{.end}">
+									<a href="{collection.fullUrl}">
+										{collection.navigationTitle}
+									</a>
+								</li>
+								{.end}
+								{.section externalLink}
+								<li>
+									<a href="{url}"{.section newWindow} target="_blank"{.end}>
+										{title}
+									</a>
+								</li>
+								{.end}
+							{.end}
+
+						</ul>
+					</div>
+				{.or}
+					{.equal? collection.typeName "products"}
+						<a aria-haspopup="true" class="products-parent" href="{collection.fullUrl}">{collection.navigationTitle}</a>
+						<squarespace:category collection="{collection.urlId}">
+			  				{.if categories}
+			  					<div class="products-child">
+				  					<ul>
+				  						{.repeated section categories}
+			        					<li class="{.if active}active-link{.end}">
+			        						<a href="{fullUrl|htmlattr}">
+			        							{name}
+			        						</a>
+			        					</li>
+				  						{.end}
+				  					</ul>
+			  					</div>
+			  				{.end}
+						</squarespace:category>
+					{.or}
+						<a href="{collection.fullUrl}">{collection.navigationTitle}</a>
+					{.end}
+				{.end}
+				</li>
+
+			{.end}
+
+			{.section externalLink}
+				<li class="external-link">
+					<a href="{url}"{.section newWindow} target="_blank"{.end}>{title}</a>
+				</li>
+			{.end}
+
+		{.end}
+	</ul>
+{.end}

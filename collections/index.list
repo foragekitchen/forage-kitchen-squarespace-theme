@@ -1,0 +1,48 @@
+{.section collection}
+	<div id="indexList" class="masonry-container loading">
+		{.repeated section collections}
+			<article data-url-id="{urlId}" 
+
+			class="
+			masonry-item
+			{.section mainImage}has-main-image{.or}
+			{.collectionTypeNameEquals? page}{.or}{.collectionTypeNameEquals? gallery}{.or}{.collectionTypeNameEquals? album}{.section metadata.albumCover}has-main-image{.end}{.or}
+			{.section items}{.section 0}{.child-images?}has-main-image{.or}
+			{.main-image?}has-main-image{.end}{.end}{.end}{.end}{.end}{.end}{.end}{.end}
+			">
+				<a href="{fullUrl}" class="masonry-link"></a>
+				<figure class="masonry-thumbnail">
+					<div class="img-wrapper intrinsic">
+						{.section mainImage}
+							<img {@|image-meta} data-load="false" />
+						{.or}
+							{.collectionTypeNameEquals? page}{.or}{.collectionTypeNameEquals? gallery}{.or}
+								{.collectionTypeNameEquals? album}
+									{.section metadata.albumCover}
+										<img {@|image-meta} data-load="false" />
+									{.end}
+								{.or}
+									{.section items}
+										{.section 0}
+											{.child-images?}
+												<img {@|child-image-meta} data-load="false" />
+											{.or}
+												{.main-image?}
+													<img {@|image-meta} data-load="false" />
+												{.end}
+											{.end}
+										{.end}
+									{.end}
+								{.end}
+							{.end}{.end}
+						{.end}
+					</div>
+				</figure>
+				<div class="masonry-overlay">
+					<section class="masonry-content">{.section title}<h1 class="masonry-title index-title">{@}</h1>{.end}</section>
+				</div>
+			</article>
+		{.end}
+	</div>
+
+{.end}

@@ -1,0 +1,26 @@
+<div id="productList" class="masonry-container loading">
+	{.repeated section items}
+		<article class="product {@|item-classes} {.child-images?}has-main-image{.or}{.main-image?}has-main-image{.end}{.end} masonry-item" id="thumb-{urlId}" data-item-id="{id}">
+			{@|product-status}
+			<a href="{fullUrl}{.if categoryFilter}?category={categoryFilter}{.end}" class="masonry-link"></a>
+			<figure class="masonry-thumbnail">
+				<div class="img-wrapper intrinsic">
+					{.child-images?}
+						<img {@|child-image-meta} data-load="false" />
+					{.or}
+						{.main-image?}
+							<img {@|image-meta} data-load="false" />
+						{.end}
+					{.end}
+				</div>
+			</figure>
+			<div class="masonry-overlay">
+				<section class="masonry-content">
+					{.section title}<h1 class="product-title masonry-title">{@}</h1>{.end}
+					<div class="product-price-container">{@|product-price}</div>
+					<div class="product-mark-inner">{@|product-status}</div>
+				</section>
+			</div>
+		</article>
+	{.end}
+</div>

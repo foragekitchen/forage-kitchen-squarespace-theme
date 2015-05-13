@@ -1,0 +1,62 @@
+<section class="blog-item">
+
+	{.section item}
+		<article class="entry {@|item-classes} clear" id="article-{id}" data-item-id="{id}">
+
+			<p class="entry-categories">
+				{.section categories}{.repeated section @}<a href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with}, {.end}{.end}
+			</p>
+			<h1 data-content-field="title" class="entry-title">
+				{.passthrough?}
+					<a href="{sourceUrl}" class="entry-title-passthrough" target="_blank">{title}</a>
+				{.or}
+					{title}
+				{.end}
+			</h1>
+
+			<p class="entry-date-author">
+				{.section author}<span class="entry-author"><a href="{collection.fullUrl}?author={author.id}">{displayName}</a> · </span>{.end}<time class="published" datetime="{addedOn|date %F}"><a href="{fullUrl}">{addedOn|date %B %e, %Y}</a></time>
+			</p>
+
+			<div class="entry-content">
+				{.section body}
+					{@}
+				{.end}
+			</div>
+
+			<footer class="entry-footer clear">
+
+				{.section sourceUrl}
+					<p class="entry-source">
+						Source: <a href="{sourceUrl}" target="_blank">{sourceUrl}</a>
+					</p>
+				{.end}
+
+				<p class="entry-tags">
+					{.section tags}Tags: {.repeated section @}<a href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with}, {.end}{.end}
+				</p>
+
+				<div class="entry-actions">
+					{@|like-button}{@|social-button-inline}
+				</div>
+
+			</footer>
+
+		</article>
+
+    	{.if postItemInjectCode}<div class="entry-injection">{postItemInjectCode}</div>{.end}
+
+		{.comments?}{@|comments}{.end}
+	{.end}  
+
+	{.if pagination}
+		<nav class="pagination clear">
+			<div class="newer">{.if pagination.prevItem}<a href="{pagination.prevItem.fullUrl}"><span>{pagination.prevItem.title}</span></a>{.end}</div>
+			<div class="older">{.if pagination.nextItem}<a href="{pagination.nextItem.fullUrl}"><span>{pagination.nextItem.title}</span></a>{.end}</div>
+		</nav>
+	{.end}
+
+</section>    
+
+  
+  

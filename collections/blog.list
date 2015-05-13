@@ -1,0 +1,80 @@
+<section class="blog-list">
+
+	{.if authorFilter}
+		<h2 class="filter-by-author">
+			<a href="{collection.fullUrl}">{author.displayName}</a>
+		</h2>
+	{.end}  
+
+	{.section categoryFilter}
+		<h2 class="filter-by-category">
+			<a href="{collection.fullUrl}">{@}</a>
+		</h2>
+	{.end}
+
+	{.section tagFilter}
+		<h2 class="filter-by-tag">
+			<a href="{collection.fullUrl}">{@}</a>
+		</h2>
+	{.end}
+
+	{.repeated section items}  
+		<article class="entry {@|item-classes}" id="article-{id}" data-item-id="{id}">
+
+			<p class="entry-categories">
+				{.section categories}{.repeated section @}<a href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with}, {.end}{.end}
+			</p>
+			<h1 data-content-field="title" class="entry-title">
+				{.passthrough?}
+					<a href="{sourceUrl}" class="entry-title-passthrough" target="_blank">{title}</a>
+				{.or}
+					<a href="{fullUrl}">{title}</a>
+				{.end}
+			</h1>
+
+			<p class="entry-date-author">
+				{.section author}<span class="entry-author"><a href="{collection.fullUrl}?author={author.id}">{displayName}</a> · </span>{.end}<time class="published" datetime="{addedOn|date %F}"><a href="{fullUrl}">{addedOn|date %B %e, %Y}</a></time>
+			</p>
+
+			<div class="entry-content">
+				{.excerpt?}
+					{excerpt}
+					<p class="entry-more-link"><a href="{fullUrl}"></a></p>
+				{.or}
+					{.section body}
+						{@}
+					{.end}
+				{.end}
+			</div>
+
+			<footer class="entry-footer clear">
+
+				{.section sourceUrl}
+					<p class="entry-source">
+						Source: <a href="{sourceUrl}" target="_blank">{sourceUrl}</a>
+					</p>
+				{.end}
+
+				<p class="entry-tags">
+					{.section tags}Tags: {.repeated section @}<a href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with}, {.end}{.end}
+				</p>
+
+				<div class="entry-actions">
+					{.comments?}<a href="{fullUrl}#comments-{id}" class="entry-comments">{.disqus?}Comment{.or}{.section publicCommentCount}{@} Comment{@|pluralize}{.or}Comment{.end}{.end}</a>{.end}{@|like-button}{@|social-button-inline}
+				</div>
+
+			</footer>
+
+    		{.if postItemInjectCode}<div class="entry-injection">{postItemInjectCode}</div>{.end}
+
+		</article>
+	{.end}
+
+	{.if pagination}
+		<nav class="pagination clear">
+			<div class="newer">{.if pagination.prevPage}<a href="{pagination.prevPageUrl}">Newer</a>{.end}</div>
+			<div class="older">{.if pagination.nextPage}<a href="{pagination.nextPageUrl}">Older</a>{.end}</div>
+		</nav>
+	{.end}
+
+</section>      

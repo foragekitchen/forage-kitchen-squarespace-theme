@@ -1,0 +1,105 @@
+<!doctype html>
+
+<!--[if lte IE 9]><html class="lte-ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html><!--<![endif]-->
+
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	{squarespace-headers}
+</head>
+
+<body id="{squarespace.page-id}" class="{squarespace.page-classes}{.section website}{.section logoImageUrl} logo-image{.or} site-title{.end}{.end}">
+	<div class="sqs-cart-dropzone"></div>
+	<div id="under">
+		<a href="#" id="navClose"></a>
+		<nav class="navigation">
+			<squarespace:navigation navigationId="main-nav" template="navigation" />
+		</nav>
+		<div class="lower-header">
+			<nav class="navigation-secondary">
+				<squarespace:navigation navigationId="secondary-nav" template="navigation" />
+			</nav>
+			{.section website}
+				{.if socialAccounts}
+				<nav class="social">
+					<ul data-content-field="connected-accounts">
+						{.repeated section socialAccounts}<li><a{.if profileUrl} href="{profileUrl}" target="_blank"{.or} title="{screenname}"{.end} class="social-{serviceName}"></a></li>{.end}
+					</ul>
+				</nav>
+				{.end}
+			{.end}
+		</div>
+	</div>
+	<div id="canvas">
+		<div id="canvasOverlay"></div>
+
+		<header id="header">
+			<div class="wrapper loading">
+				{.section website}
+					<div id="siteHeader" data-content-field="site-title">
+						<a href="/" id="logo" class="{.section logoImageUrl}has-img{.end}">{.section logoImageUrl}<img src="{logoImageUrl}?format=300w" alt="{siteTitle}" />{.end}{.section siteTitle}<h1 id="siteTitle">{@}</h1>{.end}</a>
+						{.section siteTagLine}<p id="siteTagline" data-content-field="site-tagline">{@}</p>{.end}
+					</div>
+				{.end}
+				<nav class="navigation">
+					<squarespace:navigation navigationId="main-nav" template="navigation" />
+				</nav>
+				<div class="lower-header loading">
+					<nav class="navigation-secondary">
+						<squarespace:navigation navigationId="secondary-nav" template="navigation" />
+					</nav>
+					{.section website}
+						{.if socialAccounts}
+						<nav class="social">
+							<ul data-content-field="connected-accounts">
+								{.repeated section socialAccounts}<li><a{.if profileUrl} href="{profileUrl}" target="_blank"{.or} title="{screenname}"{.end} class="social-{serviceName}"></a></li>{.end}
+							</ul>
+						</nav>
+						{.end}
+					{.end}
+				</div>
+			</div>
+			<a href="#" id="navOpen"></a>
+		</header>
+		<script>
+          Y.use('squarespace-ui-base', function(Y) {
+            Y.one("#siteTitle").plug(Y.Squarespace.TextShrink, {
+              parentEl: Y.one('#siteHeader'),
+              triggerWidth: 1024
+            });
+          });
+        </script>
+		{.section item}
+			{.if productType}{.or}
+				{.main-image?}
+					<figure id="thumbnail" class="content-fill"><img {@|image-meta} /></figure>
+				{.end}
+			{.end}
+		{.or}
+			{.section collection}
+				{.collectionTypeNameEquals? products}{.or}{.collectionTypeNameEquals? gallery}{.or}{.collectionTypeNameEquals? index}{.or}
+					{.section mainImage}
+						<figure id="thumbnail" class="content-fill"><img {@|image-meta} /></figure>
+					{.end}
+				{.end}{.end}{.end}
+			{.end}
+		{.end}
+
+		<main id="main" role="main" class="{.section item}{.main-image?}has-img{.end}{.or}{.section collection}{.section mainImage}has-img{.end}{.end}{.end}">
+			<div class="wrapper" data-content-field="main-content">
+				{squarespace.main-content}
+				<footer id="footer"><squarespace:block-field id="pageFooter" columns="12" label="Footer Content" /></footer>
+			</div>
+		</main>
+
+
+	</div>
+
+
+
+	<squarespace:script src="site.js" combo="true" />
+    {.if authenticatedAccount}<squarespace:script src="authenticated.js" combo="true" />{.end}
+	{squarespace-footers}
+</body>
+
+</html>

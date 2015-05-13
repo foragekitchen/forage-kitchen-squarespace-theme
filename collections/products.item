@@ -1,0 +1,41 @@
+{.section item}
+	<div id="flowThumbnail">
+		{.section items}
+			{.section 0}
+				<img {@|image-meta} />
+			{.end}
+		{.end}
+	</div>
+	<div id="flowContent" class="loading" data-item-id="{id}">
+		<a href="{collection.fullUrl}" class="flow-back loading">{collection.title}</a>
+
+		{@|product-status}{.if title}<h1 class="product-title">{title}</h1>{.end}
+
+		{@|product-price}
+
+		<div class="product-excerpt">{.excerpt?}{excerpt}{.end}</div>
+
+		{.if body}<a href="#" id="flowBodyOpen"></a>{.end}
+
+		{@|product-checkout}
+		{@|social-button-inline}
+	</div>
+	<div id="flowItems">
+		<div id="flowScrollPrompt"></div>
+		{.repeated section items}
+			<article class="flow-item"/>
+				<img {@|image-meta} />
+			</article>
+		{.end}
+	</div>
+	{.section body}
+		<div id="flowBody">
+			<a href="#" id="flowBodyClose"></a>
+			<div class="wrapper">
+				<h1>Additional Info</h1>
+				{@}
+			</div>
+		</div>
+	{.end}
+
+{.end}
